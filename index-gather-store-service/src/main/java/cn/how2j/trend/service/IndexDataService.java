@@ -41,6 +41,7 @@ public class IndexDataService {
         return indexDataService.store(code);
     }
 
+
     @CacheEvict(key="'indexData-code-'+ #p0")
     public void remove(String code){
 
