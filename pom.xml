@@ -9,6 +9,13 @@
       <module>index-gather-store-service</module>
       <module>index-codes-service</module>
     <module>index-data-service</module>
+      <module>index-zuul-service</module>
+    <module>index-zuul-service</module>
+    <module>index-zuul-service</module>
+    <module>index-zuul-service</module>
+    <module>fdsfdsa</module>
+    <module>index-zuul</module>
+    <module>trend-trading-backtest-service</module>
   </modules>
 
   <packaging>pom</packaging>

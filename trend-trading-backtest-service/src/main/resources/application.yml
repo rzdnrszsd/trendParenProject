@@ -4,4 +4,6 @@ eureka:
       defaultZone: http://localhost:8762/eureka/
 spring:
   application:
-    name: index-data-service
+    name:  trend-trading-backtest-service
+
+feign.hystrix.enabled: true

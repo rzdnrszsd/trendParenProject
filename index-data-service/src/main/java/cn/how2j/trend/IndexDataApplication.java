@@ -19,18 +19,18 @@ import java.util.concurrent.TimeoutException;
 @SpringBootApplication
 @EnableEurekaClient
 @EnableCaching
-public class IndexCodesApplication {
+public class IndexDataApplication {
 
     public static void main(String[] args) {
         int port = 0;
-        int defaultPort = 8011;
+        int defaultPort = 8021;
+
         int eurekaServerPort = 8762;
 
         if(NetUtil.isUsableLocalPort(eurekaServerPort)) {
             System.err.printf("检查到端口%d 未启用，判断 eureka 服务器没有启动，本服务无法使用，故退出%n", eurekaServerPort );
             System.exit(1);
         }
-
 
 
         if(null!=args && 0!=args.length) {
@@ -64,7 +64,7 @@ public class IndexCodesApplication {
                 return p;
             });
             try{
-                port=future.get(5,TimeUnit.SECONDS);
+                port=future.get(5, TimeUnit.SECONDS);
             }
             catch (InterruptedException | ExecutionException | TimeoutException e){
                 port = defaultPort;
@@ -75,6 +75,6 @@ public class IndexCodesApplication {
             System.err.printf("端口%d被占用了，无法启动%n", port );
             System.exit(1);
         }
-        new SpringApplicationBuilder(IndexCodesApplication.class).properties("server.port=" + port).run(args);
+        new SpringApplicationBuilder(IndexDataApplication.class).properties("server.port=" + port).run(args);
     }
 }
